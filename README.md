@@ -37,11 +37,7 @@ npx vite
 
 ### Alternative: Run Backend Directly
 ```
-# First compile TypeScript
-npx tsc --project server/tsconfig.json
-
-# Then run the compiled JavaScript
-node server/dist/index.js
+npm run start:backend
 ```
 
 ## Technologies Used
