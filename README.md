@@ -1,73 +1,76 @@
-# Welcome to your Lovable project
 
-## Project info
+# AI Image Generator
 
-**URL**: https://lovable.dev/projects/c7140328-b80e-483b-9075-ba6d09a49049
+A MERN (MongoDB, Express, React, Node.js) application for generating images and logos using OpenAI's DALL-E API.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- Modern dark-themed UI with glassmorphism effects
+- Image generation using OpenAI's DALL-E model
+- Multiple image size options
+- Download generated images
+- MongoDB integration for storing generated images
 
-**Use Lovable**
+## Setup Instructions
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c7140328-b80e-483b-9075-ba6d09a49049) and start prompting.
+### Client (React + Vite)
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Install dependencies:
+```bash
+npm install
+```
 
-**Use your preferred IDE**
+2. Create a `.env` file in the root directory with:
+```
+VITE_API_URL=http://localhost:3001/api
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Server (Node.js + Express + MongoDB)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. Navigate to the server directory:
+```bash
+cd server
+```
 
-**Use GitHub Codespaces**
+2. Install dependencies:
+```bash
+npm install
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+3. Create a `.env` file in the server directory with:
+```
+MONGODB_URI=your_mongodb_connection_string
+OPENAI_API_KEY=your_openai_api_key
+PORT=3001
+```
 
-## What technologies are used for this project?
+4. Start the server:
+```bash
+npm start
+```
 
-This project is built with:
+## Technology Stack
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Frontend**: React, TypeScript, Vite, Tailwind CSS, shadcn/ui
+- **Backend**: Node.js, Express, TypeScript
+- **Database**: MongoDB with Mongoose
+- **API**: OpenAI DALL-E for image generation
 
-## How can I deploy this project?
+## Environment Variables
 
-Simply open [Lovable](https://lovable.dev/projects/c7140328-b80e-483b-9075-ba6d09a49049) and click on Share -> Publish.
+### Client
+- `VITE_API_URL`: API endpoint URL
 
-## Can I connect a custom domain to my Lovable project?
+### Server
+- `MONGODB_URI`: MongoDB connection string
+- `OPENAI_API_KEY`: Your OpenAI API key
+- `PORT`: Server port (default: 3001)
 
-Yes, you can!
+## License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+MIT
