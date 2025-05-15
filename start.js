@@ -1,6 +1,11 @@
 
-const { exec } = require('child_process');
-const path = require('path');
+import { exec } from 'child_process';
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+// Get the directory name equivalent to __dirname in CommonJS
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Determine which part to start
 const arg = process.argv[2] || 'all';
