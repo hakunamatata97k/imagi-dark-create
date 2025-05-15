@@ -1,76 +1,48 @@
 
 # AI Image Generator
 
-A MERN (MongoDB, Express, React, Node.js) application for generating images and logos using OpenAI's DALL-E API.
+A MERN stack application for generating images using OpenAI's DALL-E model.
 
-## Features
+## Setup
 
-- Modern dark-themed UI with glassmorphism effects
-- Image generation using OpenAI's DALL-E model
-- Multiple image size options
-- Download generated images
-- MongoDB integration for storing generated images
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Set up your environment variables:
+   - Copy `server/.env.example` to `server/.env`
+   - Add your OpenAI API key and MongoDB connection string
 
-## Setup Instructions
+## Running the Application
 
-### Client (React + Vite)
+Since we can't modify package.json directly, use the following commands:
 
-1. Install dependencies:
-```bash
-npm install
+### Start Everything (Frontend + Backend)
+```
+node start.js
 ```
 
-2. Create a `.env` file in the root directory with:
+### Start Frontend Only
 ```
-VITE_API_URL=http://localhost:3001/api
-```
-
-3. Start the development server:
-```bash
-npm run dev
+node start.js frontend
 ```
 
-### Server (Node.js + Express + MongoDB)
-
-1. Navigate to the server directory:
-```bash
-cd server
+### Start Backend Only
+```
+node start.js backend
 ```
 
-2. Install dependencies:
-```bash
-npm install
+### Alternative: Run Frontend Directly
+```
+npx vite
 ```
 
-3. Create a `.env` file in the server directory with:
+### Alternative: Run Backend Directly
 ```
-MONGODB_URI=your_mongodb_connection_string
-OPENAI_API_KEY=your_openai_api_key
-PORT=3001
+node server/index.js
 ```
 
-4. Start the server:
-```bash
-npm start
-```
+## Technologies Used
 
-## Technology Stack
-
-- **Frontend**: React, TypeScript, Vite, Tailwind CSS, shadcn/ui
-- **Backend**: Node.js, Express, TypeScript
-- **Database**: MongoDB with Mongoose
-- **API**: OpenAI DALL-E for image generation
-
-## Environment Variables
-
-### Client
-- `VITE_API_URL`: API endpoint URL
-
-### Server
-- `MONGODB_URI`: MongoDB connection string
-- `OPENAI_API_KEY`: Your OpenAI API key
-- `PORT`: Server port (default: 3001)
-
-## License
-
-MIT
+- Frontend: React, TypeScript, Tailwind CSS
+- Backend: Node.js, Express
+- Database: MongoDB
+- API: OpenAI DALL-E for image generation
