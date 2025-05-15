@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -53,9 +52,19 @@ export default function PromptForm({ onSubmit, isLoading }: PromptFormProps) {
     setCharCount(e.target.value.length);
   };
 
+  const handleSubmitForm = (data: PromptFormValues) => {
+    // Ensure all required fields are present before submitting
+    const requestData: ImageGenerationRequest = {
+      prompt: data.prompt, // This is now guaranteed to be a string
+      size: data.size,     // This is now guaranteed to be one of the allowed sizes
+    };
+    
+    onSubmit(requestData);
+  };
+
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit((data) => onSubmit(data))} className="space-y-6">
+      <form onSubmit={form.handleSubmit(handleSubmitForm)} className="space-y-6">
         <FormField
           control={form.control}
           name="prompt"
