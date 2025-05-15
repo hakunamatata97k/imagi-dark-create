@@ -1,12 +1,6 @@
 
-// Start script for frontend and backend
-import { exec } from 'child_process';
-import { fileURLToPath } from 'url';
-import path from 'path';
-
-// Get the directory name equivalent to __dirname in CommonJS
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const { exec } = require('child_process');
+const path = require('path');
 
 // Determine which part to start
 const arg = process.argv[2] || 'all';
@@ -30,7 +24,7 @@ function startFrontend() {
 // Backend startup
 function startBackend() {
   console.log('Starting backend...');
-  const backendProcess = exec('npm run start:backend', { cwd: __dirname });
+  const backendProcess = exec('node server/index.js', { cwd: __dirname });
   
   backendProcess.stdout.on('data', (data) => {
     console.log(`Backend: ${data}`);

@@ -37,7 +37,7 @@ npx vite
 
 ### Alternative: Run Backend Directly
 ```
-npm run start:backend
+node server/index.js
 ```
 
 ## Technologies Used
